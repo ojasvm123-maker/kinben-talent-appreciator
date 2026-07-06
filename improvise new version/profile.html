@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Athlete Profile</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="discover.html">Discover</a>
+</nav>
+
+<div class="container">
+
+<div class="card">
+
+<h1 id="playerName">
+Athlete Name
+</h1>
+
+<h2 id="playerScore">
+Score
+</h2>
+
+<p>
+AI Performance Analysis
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+const athlete =
+JSON.parse(
+localStorage.getItem("athlete")
+);
+
+if(athlete){
+
+document.getElementById(
+"playerName"
+).innerHTML = athlete.name;
+
+document.getElementById(
+"playerScore"
+).innerHTML =
+athlete.score + "/100";
+
+}
+
+</script>
+
+</body>
+</html>
