@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KinBen Talent Appreciator</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+</head>
+
+<body>
+
+<div id="loader">
+    <div class="spinner"></div>
+    <h2>KinBen Talent Appreciator</h2>
+</div>
+
+<button id="themeBtn">🌙</button>
+
+<button id="topBtn">↑</button>
+
+<!-- Navigation -->
+
+<nav class="navbar">
+
+<div class="logo">
+KINBEN TALENT APPRECIATOR
+</div>
+
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#stats">Statistics</a></li>
+<li><a href="#about">About</a></li>
+</ul>
+
+</nav>
+
+<!-- Hero Section -->
+
+<section id="home" class="hero">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1>
+Discover India's Hidden Sports Talent
+</h1>
+
+<p>
+Every Village Has A Champion.
+We Help The World Discover Them.
+</p>
+
+<button class="hero-btn"
+onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">
+Get Started
+</button>
+
+
+</div>
+
+</section>
+
+<!-- Statistics -->
+
+<section id="stats" class="stats-section reveal">
+
+<h2>Our Impact</h2>
+
+<div class="stats-container">
+
+<div class="stat-card">
+<h1 id="players">0</h1>
+<p>Players Analyzed</p>
+</div>
+
+<div class="stat-card">
+<h1 id="villages">0</h1>
+<p>Villages Connected</p>
+</div>
+
+<div class="stat-card">
+<h1 id="academies">0</h1>
+<p>Academies Registered</p>
+</div>
+
+<div class="stat-card">
+<h1 id="accuracy">0</h1>
+<p>AI Accuracy %</p>
+</div>
+
+</div>
+
+
+</section>
+<!-- PLAYER REGISTRATION -->
+
+<section id="register" class="register-section reveal">
+
+<h2>Player Registration</h2>
+
+<form id="playerForm">
+
+<input type="text" id="playerName"
+placeholder="Player Name" required>
+
+<input type="number" id="playerAge"
+placeholder="Age" required>
+
+<select id="playerSport" required>
+<option value="">Select Sport</option>
+<option>Cricket</option>
+<option>Football</option>
+<option>Athletics</option>
+<option>Hockey</option>
+<option>Kabaddi</option>
+</select>
+
+<input type="text"
+id="playerDistrict"
+placeholder="District" required>
+
+<button type="submit">
+Register Player
+</button>
+
+</form>
+
+</section>
+
+<!-- VIDEO UPLOAD -->
+
+<section class="upload-section reveal">
+
+<h2>Upload Performance Video</h2>
+
+<input type="file"
+id="videoUpload"
+accept="video/*">
+
+<br><br>
+
+<video id="videoPreview"
+controls>
+</video>
+
+</section>
+
+<!-- PLAYER CARDS -->
+
+<section class="players-section reveal">
+
+<h2>Featured Players</h2>
+
+<div class="player-container">
+
+<div class="player-card">
+
+
+<img
+src="https://via.placeholder.com/250x180"
+alt="Player">
+
+<h3>Rahul Sharma</h3>
+
+<p>Sport: Cricket</p>
+
+<p>Score: 96/100</p>
+
+</div>
+
+<div class="player-card">
+
+<img
+src="https://via.placeholder.com/250x180"
+alt="Player">
+
+<h3>Aman Khan</h3>
+
+<p>Sport: Football</p>
+
+<p>Score: 94/100</p>
+
+</div>
+
+<div class="player-card">
+
+<img
+src="https://via.placeholder.com/250x180"
+alt="Player">
+
+<h3>Ravi Patel</h3>
+
+<p>Sport: Athletics</p>
+
+<p>Score: 92/100</p>
+
+
+</div>
+
+
+</div>
+
+</section>
+<!-- AI DASHBOARD -->
+
+
+
+<section class="dashboard-section reveal">
+
+
+<h2>AI Performance Dashboard</h2>
+
+
+
+<div class="dashboard-card">
+
+
+
+<button id="analyzeBtn">
+
+Analyze Player Performance
+
+</button>
+
+
+
+<h3 id="overallScore">
+
+Overall Score: --
+
+</h3>
+
+
+
+<div class="skill">
+
+
+
+<p>Speed</p>
+
+
+
+<div class="progress-bar">
+
+<div id="speedBar"
+
+class="progress-fill">
+
+0%
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="skill">
+
+
+
+<p>Technique</p>
+
+
+
+<div class="progress-bar">
+
+<div id="techniqueBar"
+
+class="progress-fill">
+
+0%
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="skill">
+
+
+
+<p>Fitness</p>
+
+
+
+<div class="progress-bar">
+
+<div id="fitnessBar"
+
+class="progress-fill">
+
+0%
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+<!-- SEARCH PLAYER -->
+
+
+
+<section class="search-section">
+
+
+
+<h2>Search Player</h2>
+
+
+
+<input
+
+type="text"
+
+id="searchInput"
+
+placeholder="Enter Player Name">
+
+
+
+</section>
+
+
+
+<!-- LEADERBOARD -->
+
+
+
+<section class="leaderboard-section reveal">
+
+
+
+<h2>Top Talent Leaderboard</h2>
+
+
+
+<table id="leaderboardTable">
+
+
+
+<tr>
+
+<th>Rank</th>
+
+<th>Player</th>
+
+<th>Sport</th>
+
+<th>Score</th>
+
+</tr>
+
+
+
+<tr>
+
+<td>1</td>
+
+<td>Rahul Sharma</td>
+
+<td>Cricket</td>
+
+<td>96</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>2</td>
+
+<td>Aman Khan</td>
+
+<td>Football</td>
+
+<td>94</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>3</td>
+
+<td>Ravi Patel</td>
+
+<td>Athletics</td>
+
+<td>92</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>4</td>
+
+<td>Mohit Verma</td>
+
+<td>Cricket</td>
+
+<td>90</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>5</td>
+
+<td>Rohan Singh</td>
+
+<td>Kabaddi</td>
+
+<td>88</td>
+
+</tr>
+
+
+
+</table>
+
+
+
+</section>
+
+<!-- ACADEMY DASHBOARD -->
+
+<section class="academy-section reveal">
+
+<h2>Academy Talent Discovery</h2>
+
+<div class="academy-container">
+
+<div class="academy-card">
+<h3>Top Cricket Talent</h3>
+<p>Rahul Sharma</p>
+<p>Score: 96/100</p>
+<button>View Profile</button>
+</div>
+
+<div class="academy-card">
+<h3>Top Football Talent</h3>
+<p>Aman Khan</p>
+<p>Score: 94/100</p>
+<button>View Profile</button>
+</div>
+
+<div class="academy-card">
+<h3>Top Athletics Talent</h3>
+<p>Ravi Patel</p>
+<p>Score: 92/100</p>
+<button>View Profile</button>
+</div>
+
+</div>
+
+</section>
+
+<!-- SPORT FILTER -->
+
+<section class="filter-section reveal">
+
+<h2>Filter Players by Sport</h2>
+
+<select id="sportFilter">
+
+<option value="all">All Sports</option>
+
+<option value="cricket">Cricket</option>
+
+<option value="football">Football</option>
+
+<option value="athletics">Athletics</option>
+
+<option value="kabaddi">Kabaddi</option>
+
+</select>
+
+<div class="filter-players">
+
+<div class="filter-card cricket">
+<h3>Rahul Sharma</h3>
+<p>Cricket</p>
+</div>
+
+<div class="filter-card football">
+<h3>Aman Khan</h3>
+<p>Football</p>
+</div>
+
+<div class="filter-card athletics">
+<h3>Ravi Patel</h3>
+<p>Athletics</p>
+</div>
+
+<div class="filter-card kabaddi">
+<h3>Rohan Singh</h3>
+<p>Kabaddi</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact-section reveal">
+
+<h2>Contact Us</h2>
+
+<form id="contactForm">
+
+<input
+type="text"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+placeholder="Your Email"
+required>
+
+<textarea
+placeholder="Your Message"
+required>
+</textarea>
+
+<button type="submit">
+Send Message
+</button>
+
+</form>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="reveal">
+
+<h2>KinBen Talent Appreciator</h2>
+
+<p>
+Discovering India's Hidden Sports Champions
+Through AI Technology
+</p>
+
+<p>
+© 2026 All Rights Reserved
+</p>
+
+</footer>
+
+
+<!-- About -->
+
+<section id="about" class="about-section reveal">
+
+<h2>About KinBen Talent Appreciator</h2>
+
+<p>
+
+KinBen Talent Appreciator is an AI-powered platform
+designed to identify talented athletes from villages
+and small towns across India.
+
+Using smartphone video recordings and intelligent
+performance analysis, the platform creates
+standardized scores that allow sports academies
+to discover hidden talent remotely.
+
+</p>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
